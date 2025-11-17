@@ -2,6 +2,7 @@ import Button from "./button";
 import "./hero.css";
 import BlurText from "./blurtext";
 import TextType from "./typetext";
+import CountUp from "./countup"
 
 const Hero = () => {
     return (
