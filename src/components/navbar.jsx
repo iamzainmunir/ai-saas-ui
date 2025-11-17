@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <nav className="px-6 absolute top-6 z-99 left-1/2 -translate-x-1/2 max-w-[1200px] w-full">
             <div className="flex items-center justify-between">
-                <img src="/Logo.png" alt="Logo" className="h-10" />
+                <img src="/logo.svg" alt="Logo" className="h-15" />
 
                 <ul className="hidden md:flex gap-8 [&>li]:text-lg lg:[&>li]:text-xl [&>li]:cursor-pointer [&>li]:hover:text-(--primary-color) [&>li]:duration-200 ">
                     <li>Home</li>
@@ -22,14 +22,16 @@ const Navbar = () => {
                     <Button text="Get Started" />
                 </div>
 
-                <button onClick={() => setOpen(!open)} className="md:hidden text-3xl">
+                <button
+                    onClick={() => setOpen(!open)}
+                    className="md:hidden text-3xl"
+                >
                     ☰
                 </button>
             </div>
 
             {/* animated mobile menu */}
             <AnimatePresence>
-
                 {open && (
                     <motion.div
                         initial={{ opacity: 0, height: 0 }}
@@ -51,7 +53,6 @@ const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-
         </nav>
     );
 };
