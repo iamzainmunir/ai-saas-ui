@@ -1,6 +1,5 @@
 import Button from "./button";
 import "./hero.css";
-import CountUp from "./CountUp";
 import BlurText from "./blurtext";
 import TextType from "./typetext";
 
@@ -38,14 +37,7 @@ const Hero = () => {
                                 )}
                             </div>
                             <span className="text-white/75 min-[400px]:text-xs text-[10px] ml-4 ">
-                                <CountUp
-                                    from={0}
-                                    to={150}
-                                    separator="+"
-                                    direction="up"
-                                    duration={1}
-                                    className="count-up-text"
-                                />{" "}
+                                150+
                                 Happy clients
                             </span>
                         </div>
