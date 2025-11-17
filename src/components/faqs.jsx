@@ -51,9 +51,8 @@ const Faqs = () => {
                 <div className="heading text-[clamp(2.5rem,2.8vw,5rem)] font-bold text-center">
                     Frequently Asked Questions
                 </div>
-                <div className="text text-[clamp(0.9rem,2vw,1rem)] text-center text-(--text-color)">
-                    Got questions? We've got answers. Find everything you need
-                    to know about using our platform, plans, and features.
+                <div className="text text-[clamp(0.9rem,2vw,1rem)] text-center text-(--text-color) max-w-[800px] mx-auto">
+                   Whether you're a safety professional, a fresh learner, or a corporate client seeking certified training, we understand you may have questions. That’s why we’ve compiled answers to the most commonly asked queries — from course selection and certification to delivery methods and international recognition. Still unsure? Our team is always ready to help.
                 </div>
                 <div className="max-w-220 mt-20 mx-auto">
                     <Accordion
