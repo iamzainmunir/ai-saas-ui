@@ -1,23 +1,25 @@
+import '@n8n/chat/style.css';
 import React, { useEffect, useState } from "react";
 import Hero from "./components/hero";
 import Navbar from "./components/navbar";
 import Services from "./components/services";
 import Story from "./components/story";
-import Plans from "./components/plans";
 import Faqs from "./components/faqs";
 import Footer from "./components/footer";
 import Contact from "./components/form";
-import SmoothScroll from "./SmoothScroll";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import LoadingPage from "./components/loading_animation";
-import MorphLoadingPage from "./components/loading_animation";
 import AdvancedLoadingPage from "./components/loading_animation";
+import { Loader } from 'lucide-react';
+import ChatWidget from './components/ChatbotWidget';
+
+
 
 const App = () => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [contentReady, setContentReady] = useState(false);
+
 
     // Simulate loading assets and data
     useEffect(() => {
@@ -28,6 +30,8 @@ const App = () => {
 
         return () => clearTimeout(loadingTimer);
     }, []);
+
+
 
     const handleLoadingComplete = () => {
         setIsLoading(false);
@@ -57,7 +61,7 @@ const App = () => {
             <AdvancedLoadingPage onComplete={handleLoadingComplete} />
         ) : (
             <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
-                <div className="text-white text-xl">Loading...</div>
+                <div className="text-white text-xl animate-spin"><Loader /></div>
             </div>
         );
     }
@@ -65,8 +69,7 @@ const App = () => {
 
     return (
         <>
-
-            {/* <SmoothScroll /> */}
+            {/* <ChatWidget /> */}
             <Navbar />
             <Hero />
             <Services />

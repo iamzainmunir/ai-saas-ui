@@ -23,7 +23,7 @@ const Navbar = () => {
             <nav className="fixed bg-black/10 backdrop-blur-md top-3 z-50 mx-auto rounded-3xl py-3 px-4 sm:py-4 left-1/2 -translate-x-1/2">
                 <div className="flex items-center justify-evenly! md:gap-30 gap-40! ">
                     {/* Logo */}
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                         <img
                             src="/logo.svg"
                             alt="Logo"
