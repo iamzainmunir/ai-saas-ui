@@ -1,30 +1,22 @@
-import js from "@eslint/js";
-import globals from "globals";
-import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
-import { defineConfig, globalIgnores } from "eslint/config";
+import { FlatCompat } from "@eslint/eslintrc";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
-export default defineConfig([
-    globalIgnores(["dist"]),
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+    baseDirectory: __dirname,
+});
+
+const eslintConfig = [
+    ...compat.extends("next/core-web-vitals", "next/typescript"),
     {
-        files: ["**/*.{js,jsx}"],
-        extends: [
-            js.configs.recommended,
-            reactHooks.configs["recommended-latest"],
-            reactRefresh.configs.vite,
-        ],
-        languageOptions: {
-            ecmaVersion: 2020,
-            globals: globals.browser,
-            parserOptions: {
-                ecmaVersion: "latest",
-                ecmaFeatures: { jsx: true },
-                sourceType: "module",
-            },
-        },
         rules: {
-            "no-unused-vars": "off", // Disable for standard JS
-            "@typescript-eslint/no-unused-vars": "off", // Disable for TypeScript
+            "@typescript-eslint/no-unused-vars": "off",
+            "react/no-unescaped-entities": "off",
         },
     },
-]);
+];
+
+export default eslintConfig;
